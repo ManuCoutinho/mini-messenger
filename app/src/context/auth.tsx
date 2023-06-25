@@ -34,7 +34,7 @@ export const AuthContext = createContext({} as AuthContextData);
 export function AuthProvider(props: AuthProvider) {
   const [user, setUser] = useState<User | null >(null)
 
-  const signInUrl = `https://github.com/login/oauth/authorize?scope=user&client_id=0441a40aa96220bc8d37&redirect_uri=http://localhost:3000`
+  const signInUrl = `https://github.com/login/oauth/authorize?scope=user&client_id=${import.meta.env.VITTE_CLIENT_ID}&redirect_uri=http://localhost:3000`
 
 
   async function signIn(githubCode: string) {  

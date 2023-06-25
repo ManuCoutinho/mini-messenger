@@ -41,7 +41,7 @@ Status:
 
 ## :dart: About ##
 
-Em construção... 
+Em construção... logo, logo mais informações por aqui!
 
 ## :sparkles: Features ##
 

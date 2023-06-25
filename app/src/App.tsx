@@ -5,15 +5,15 @@ import { MessageList } from './components/MessageList'
 import { SendMessageForm } from './components/SendMessageForm'
 import { AuthContext } from './context/auth'
 
-
 export function App() {
-  const { user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext)
   return (
-    <main className={`${styles.contentWrapper} ${!!user ? styles.contentSigned : '' }`}>
-      <MessageList/>
+    <main
+      className={`${styles.contentWrapper} ${user ? styles.contentSigned : ''}`}
+    >
+      <MessageList />
 
-      {!!user ? <SendMessageForm/> : <LoginBox />}
-   
+      {user ? <SendMessageForm /> : <LoginBox />}
     </main>
   )
 }

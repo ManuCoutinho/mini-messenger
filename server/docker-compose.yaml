@@ -11,7 +11,7 @@ services:
       POSTGRES_USER: root
       POSTGRES_DB: Messenger
     volumes:
-      - postgres-data:/var/lib/postgresql/data:Z
+      - ./docker/postgres:/docker-entrypoint-initdb.d
     ports:
       - 5432:5432
   
@@ -39,9 +39,10 @@ services:
       - postgres
     ports:
       - "4000:4000"
+    volumes:
+      - server-data:/var/lib/server-data:Z
     restart: always
 
 volumes:
-  postgres-data:
   pgadmin-data:
- 
+  server-data:

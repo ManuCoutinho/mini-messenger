@@ -38,7 +38,7 @@ services:
     depends_on:
       - postgres
     ports:
-      - "4000:4000"
+      - "4800:4800"
     volumes:
       - server-data:/var/lib/server-data:Z
     restart: always

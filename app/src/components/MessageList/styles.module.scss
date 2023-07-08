@@ -1,58 +1,69 @@
-.messageListWrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
+@import '../../styles/mixins/grid';
+@import '../../styles/mixins/user-image';
+@import '../../styles/base/variables';
+@import '../../styles/mixins/breakpoints';
 
-  >img {
-    height:28px;
-    margin: 32px 0;
-  }
-}
-
-.messageList {
+.m-list {
   list-style: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 40px;
+  gap:2rem;
   flex: 1;
+  @include breakpoint(small-only){
+    justify-content: flex-start;
+    
+  }
+
+  &__wrapper {
+  @include flexColumn(space-between, flex-start);
+
+  > img {
+    height:28px;
+    margin: 2rem 0;
+  }
+}
 }
 
-.message {
+
+
+
+.l-item {
+  &__message {
   max-width: 440px !important;
-
+ 
   &:nth-child(2) {
-    margin-left: 80px;
+    margin-left: 5rem;
+      @include breakpoint(small-only){
+         margin-left: 0rem;
+      }
+  }
+}
+  &__content {
+    font-size:$lg;
+    line-height:1.5rem;
+       @include breakpoint(small-only){
+        font-size: $md;
+      }
   }
 
-  .messageContent {
-    font-size:20px;
-    line-height:28px;
-  }
-
-    .messageUser {
-      margin-top: 16px;
+    &__user {
+      margin-top: 1rem;
       display: flex;
       align-items: center;
 
-      .userImage {
-        padding: 2px;
-        background: linear-gradient(100deg, #ff008e 0.48%, #ffcd1e 100%);
-        border-radius:50%;
-        line-height:0;
+       @include breakpoint(small-only){
+        margin-left: 2rem;
+      }
 
-        img {
-          width: 40px;
-          height: 40px;
-          border-radius:50%;
-          border: 4px solid #121214;
-        }
+      &--img {
+       @include userImage(2px, 40px);
       } 
       
       span {
-        font-size: 16px;
-        margin-left: 12px;
+        font-size: 1rem;
+        margin-left: 0.75rem;
       }
     }
+
 }

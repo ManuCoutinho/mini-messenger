@@ -1,82 +1,79 @@
-.sendMessageFormWrapper {
-  background: #1b1b1f;
-  padding: 24px;
-  align-self: center;
+@import '../../styles/mixins/user-image';
+@import '../../styles/base/variables';
+@import '../../styles/mixins/grid';
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
 
-  position: relative;
-}
+.sm {
+  &__wrapper {
+    background: $black;
+    padding: 1.5rem;
+    align-self: center;
+    text-align: center;
+    position: relative;
+    border-radius: $global_radius_md;
+    @include flexColumn(center, center);
+    margin-right: 0.5rem;
+  }
 
-.signOutButton {
-  background: transparent;
-  border: 0;
-  color: #c4c4cc;
+  &__button--singout {
+    background: transparent;
+    border: 0;
+    color: $text;
 
-  position: absolute;
-  left: 24px;
-  top: 24px;
+    position: absolute;
+    left: 1.5rem;
+    top: 1.5rem;
+    transition: color 0.25s ease-in-out;
+    cursor: pointer;
 
-  cursor: pointer;
-
-  &:hover {
-    filter: brightness(0.9);
+    &:hover {
+      color: $secondary;
+      transition: color 0.25s ease-in-out;
+    }
   }
 }
 
-.userInformation {
+
+.sm-user__information {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.userImage {
-  padding: 3px;
-  background: linear-gradient(100deg, #ff008e 0.48%, #ffcd1e 100%);
-  border-radius: 50%;
-  line-height: 0;
-
-  img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 6px solid #121214;
-  }
+.sm-user__img {
+  @include userImage(3px, 100px);
 }
 
-.userName {
+.sm-user__name {
   font-size: 24px;
   line-height: 30px;
   margin-top: 16px;
 }
 
-.userGithub {
-  display:flex;
-  align-items: center;
-  margin-top: 8px;
-  color: #c4c4cc;
+.sm-user__github {
+ @include flexRow(center);
+ gap: 0.5rem;
+  margin-top: 0.5rem;
+  color: $secondary;
 
   img {
-    margin-right: 8px;
+    margin-right:0.5rem;
   }
 }
 
-.sendMessageForm {
+.sm__form {
   display: flex;
   flex-direction: column;
   align-self: stretch;
-  margin-top: 48px;
-
-  background: #202024;
+  margin-top: 2.5rem;
+  border-radius: $global_radius_sm;
+  background: $black;
 
   label {
-    padding: 18px 24px;
-    font-size: 20px;
-    background: #29292e;
-    font-weight: bold;
+    padding: 1rem 1.5rem;
+    font-size: $md;
+    background: $black;
+    font-weight: $semi_bold;
     text-align: left;
   }
 
@@ -88,37 +85,38 @@
     height: 160px;
     font-size: 16px;
     line-height: 24px;
-    color: #e1e1e6;
+    color: $info;
+   
+    &:is(:focus, :active, :focus-within) {
+      outline: 1px solid $secondary;
+      border-radius: $global_radius_sm;
+    }
   }
 
-  &:focus {
-    outline: 0;
-  }
 
   &::placeholder {
-    color: #8d8d99;
+    color: $text;
   }
 
-  button {
+ 
+
+  button[type='submit'] {
   align-self: flex-end;
   border: 0;
-  background: #ff008e;
+  background: $highlight;
   cursor: pointer;
-  margin: 24px;
-  padding: 0 32px;
-  height: 40px;
-  color: #fff;
-  font-size:14px;
-  font-weight:bold;
+  margin: 1.5rem;
+  padding: 1.5rem 2rem;
+  border-radius: $global_radius_sm;
+  color: $info;
+  font-size: $sm;
+  font-weight: $semi_bold;
   text-transform: uppercase;
-  text-decoration: none;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  transition: filter 0.25s ease-in-out;
 
   &:hover {
     filter: brightness(0.9);
+    transition: filter 0.25s ease-in-out;
   }
   }
 }

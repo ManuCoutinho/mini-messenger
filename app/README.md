@@ -1,58 +1,33 @@
 <h1 align="center">Mini Messenger Web App</h1>
 
-<p align="center">
-  <a href="#dart-about">About</a> &#xa0; | &#xa0; 
-  <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
-  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
-  <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
-  <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
-</p>
+## :dart: Sobre ##
 
-<br>
+A aplicação consite numa landing page no formato de SPA, que contém um mini chat para que os usuários possam comentar sobre o evento. Impotante ressaltar que para acessar o chat é necessária a autenticação do usuário por meio de autenticação social.
 
-## :dart: About ##
+## :minidisc: Requerimentos ##
 
-Describe your project
+Antes de iniciar :checkered_flag:, você precisa ter o [Git](https://git-scm.com) e [Node](https://nodejs.org/en/) versão LTS instalados no seu ambiente de desenvolvimento.
+Caso prefira, poderá iniciar a aplicação utilizando o _DevContainer_ do VSCode.
 
-## :sparkles: Features ##
-
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
-
-## :rocket: Technologies ##
-
-The following tools were used in this project:
-
-- [Expo](https://expo.io/)
-- [Node.js](https://nodejs.org/en/)
-- [React](https://pt-br.reactjs.org/)
-- [React Native](https://reactnative.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
-
-## :white_check_mark: Requirements ##
-
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
-
-## :checkered_flag: Starting ##
+## :checkered_flag: Iniciando ##
 
 ```bash
-# Clone this project
-$ git clone https://github.com/ManuCoutinho/mini-messenger
+# Clone este projeto
+$ git clone https://github.com/ManuCoutinho/mini-messenger.git
 
-# Access
+# Acesse a pasta do frontend
 $ cd app
 
-# Install dependencies
+# Instale as dependências
 $ npm install
 
-# Run the project
-$ npm start
+# Inicie o servidor de desenvolvimento
+$ npm run dev
 
-# The server will initialize in the <http://localhost:5173>
+# Voilà! Seu front-end estará rodando em <http://localhost:5173>
 ```
 
 
 &#xa0;
 
-<a href="#top">Back to top</a>
+<a href="#top"> :arrow_up: </a>

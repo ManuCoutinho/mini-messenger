@@ -6,6 +6,7 @@
 ## :yarn: Sobre ##
 
 Este projeto contempla a API para um mini chat, com comunicação via web socket.
+
 A API atualmente contém as seguintes rotas:
 
 ```bash
@@ -36,13 +37,19 @@ GET /profile
 Antes de iniciar :checkered_flag:, você precisa ter o [Git](https://git-scm.com) e [Node](https://nodejs.org/en/) versão LTS instalados no seu ambiente de desenvolvimento.
 Para utilização da API recomenda-se a utilização das ferramentas [Docker](https://www.docker.comm) e [docker compose](https://docs.docker.com/compose/).
 O passo-a-passo a seguir considerará que você está utilizando as ferramentas acima recomendadas.
-Outra alternativa recomendada é a utilização da ferramenta _Dev Containers_ do Vscode, por meio da opção "docker compose"
+Outra alternativa recomendada é a utilização da ferramenta _Dev Containers_ do Vscode, por meio da opção "docker compose".
+
+Para que a API funcione plenamente são necessárias as variáveis de ambiente descritas no arquivo `.env.example`.
+
+Para utilizar a autenticação social via Github, primeiramente é necessário criar um OAuth App, conforme a  [documentação oficial 📓](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app).
+No momento do registro, utlize `{{YOUR-BASE-URL}}/signin/callback`, no campo `Authorization callback URL`. Após salvar serão gerados  um `client secret` e um `client id`.
+
 
 ## :checkered_flag: Iniciando ##
 
 ```bash
 # Clone este projeto
-$ git clone https://github.com/ManuCoutinho/mini-messenger
+$ git clone https://github.com/ManuCoutinho/mini-messenger.git
 
 # Acesse a pasta da API
 $ cd sever

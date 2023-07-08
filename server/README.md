@@ -49,7 +49,7 @@ No momento do registro, utlize `{{YOUR-BASE-URL}}/signin/callback`, no campo `Au
 
 ```bash
 # Clone este projeto
-$ git clone https://github.com/ManuCoutinho/mini-messenger
+$ git clone https://github.com/ManuCoutinho/mini-messenger.git
 
 # Acesse a pasta da API
 $ cd sever

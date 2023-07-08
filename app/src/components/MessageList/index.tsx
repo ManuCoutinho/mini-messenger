@@ -1,27 +1,19 @@
-import { api } from '../../services/api'
-import io from 'socket.io-client'
 import { useEffect, useState } from 'react'
+import io from 'socket.io-client'
+import { api } from '../../services/api'
+import { MessageType } from './model'
 import styles from './styles.module.scss'
 
-type Message = {
-  id: string
-  text: string
-  user: {
-    name: string
-    avatar_url: string
-  }
-}
-
-const messagesQueue: Message[] = []
+const messagesQueue: MessageType[] = []
 
 const socket = io(import.meta.env.VITE_BACKEND_ENDPOINT)
 
-socket.on('new_message', (newMessage: Message) => {
+socket.on('new_message', (newMessage: MessageType) => {
   messagesQueue.push(newMessage)
 })
 
-export function MessageList() {
-  const [messages, setMessages] = useState<Message[]>([])
+export function MessageList(): React.JSX.Element {
+  const [messages, setMessages] = useState<MessageType[]>([])
 
   useEffect(() => {
     setInterval(() => {
@@ -31,24 +23,27 @@ export function MessageList() {
         )
         messagesQueue.shift()
       }
-    }, 3000)
+    }, 2000)
   }, [])
 
   useEffect(() => {
-    api.get<Message[]>('messages/last3').then((response) => {
+    api.get<MessageType[]>('messages/last3').then((response) => {
       setMessages(response.data)
     })
   }, [])
   return (
-    <div className={styles.messageListWrapper}>
-      <ul className={styles.messageList}>
+    <div className={styles['m-list__wrapper']}>
+      <ul className={styles['m-list']}>
         {messages.map((message) => {
           return (
-            <li key={message.id} className={styles.message}>
-              <p className={styles.messageContent}> {message.text} </p>
-              <div className={styles.messageUser}>
-                <div className={styles.userImage}>
-                  <img src={message.user.avatar_url} alt={message.user.name} />
+            <li key={message.id} className={styles['l-item__message']}>
+              <p className={styles['l-item__content']}> {message.text} </p>
+              <div className={styles['l-item__user']}>
+                <div className={styles['l-item__user--img']}>
+                  <img
+                    src={message.user.avatar_url}
+                    alt={`avatar de  ${message.user.name}`}
+                  />
                 </div>
                 <span>{message.user.name}</span>
               </div>

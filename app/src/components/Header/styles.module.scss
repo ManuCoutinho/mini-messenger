@@ -1,0 +1,44 @@
+@import '../../styles/base/_variables';
+@import '../../styles/mixins/breakpoints';
+
+.header {
+  font-size: 5rem;
+  line-height: 6rem;
+  letter-spacing: 4px;
+  color: transparent;
+  -webkit-background: linear-gradient(205deg, $highlight,  $secondary,$primary,#f15454);
+  background: linear-gradient(205deg, $highlight,  $secondary,$primary, #f15454);
+  -webkit-background-clip: text;
+  background-clip: text;
+    @include breakpoint(small-only){
+      text-align: center;
+    }
+
+    &__subtitle {
+    font-size: $lg;
+    line-height: 4rem;
+    font-weight: $semi_bold;
+    padding: 0 0.5rem;
+    }
+
+    &__wrapper {
+    padding: 1rem;
+
+     @include breakpoint(small-only){
+      padding: 1rem 2rem;
+      }
+    }
+
+    &__description {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    padding: 0 0.5rem;
+
+      &:first-of-type {
+        margin-bottom: 0.5rem;
+      }
+    
+    }
+
+  
+}

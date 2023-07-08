@@ -1,46 +1,26 @@
-import { createContext, ReactNode, useEffect, useState } from 'react'
-import { api } from '../services/api'
+import { createContext, useEffect, useState } from 'react'
+import { api } from '@/services/api'
+import {
+  AuthContextDataType,
+  AuthProviderProps,
+  AuthResponseTypes,
+  UserType
+} from './model'
 
-type User = {
-  id: string
-  name: string
-  login: string
-  avatar_url: string
-}
-type AuthContextData = {
-  user: User | null
-  signInUrl: string
-  signOut: () => void
-}
+export const AuthContext = createContext({} as AuthContextDataType)
 
-type AuthResponse = {
-  token: string
-  user: {
-    id: string
-    avatar_url: string
-    name: string
-    login: string
-  }
-}
-
-type AuthProvider = {
-  children: ReactNode
-}
-
-export const AuthContext = createContext({} as AuthContextData)
-
-export function AuthProvider(props: AuthProvider) {
-  const [user, setUser] = useState<User | null>(null)
+export function AuthProvider(props: AuthProviderProps) {
+  const [user, setUser] = useState<UserType | null>(null)
 
   const signInUrl = `https://github.com/login/oauth/authorize?scope=user&client_id=${
     import.meta.env.VITE_CLIENT_ID
   }&redirect_uri=http://localhost:5173/`
 
   async function signIn(githubCode: string) {
-    const response = await api.post<AuthResponse>('authenticate', {
+    const response = await api.post<AuthResponseTypes>('authenticate', {
       code: githubCode
     })
-    console.log(response)
+
     const { token, user } = response.data
     localStorage.setItem('@app:token', token)
     api.defaults.headers.common.authorization = `Bearer ${token}`
@@ -58,7 +38,7 @@ export function AuthProvider(props: AuthProvider) {
 
     if (token) {
       api.defaults.headers.common.authorization = `Bearer ${token}`
-      api.get<User>('profile').then((response) => {
+      api.get<UserType>('profile').then((response) => {
         setUser(response.data)
       })
     }
@@ -70,7 +50,7 @@ export function AuthProvider(props: AuthProvider) {
 
     if (hasGithubCode) {
       const [urlWithoutCode, githubCode] = url.split('?code=')
-      //limpar barra de navegação
+      //clean url
       window.history.pushState({}, '', urlWithoutCode)
       signIn(githubCode)
     }

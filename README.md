@@ -42,6 +42,7 @@ Status:
 ## :dart: About ##
 
 Em construção... logo, logo mais informações por aqui!
+registrar new gh app - link para documentação
 
 ## :sparkles: Features ##
 

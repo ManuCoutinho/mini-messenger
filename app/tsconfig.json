@@ -7,6 +7,10 @@
     "skipLibCheck": true,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
+    "types": ["node"],
+    "paths":{
+      "@/*": ["./src/*"]
+    },
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
@@ -18,7 +22,7 @@
     "incremental": true
   },
   "include": [
-    "./src",
+    "src",
     ".jest/jest.setup.ts",
     "**/*.ts",
     "**/*.tsx",

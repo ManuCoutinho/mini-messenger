@@ -1,0 +1,15 @@
+@import '../base/variables';
+
+@mixin userImage($size, $imgSize){
+  padding: $size;
+  background: linear-gradient(100deg, $highlight , $primary, $secondary);
+  border-radius:  $global_radius_full;
+  line-height: 0;
+
+  > img {
+    width: $imgSize;
+    height: $imgSize;
+    border-radius: $global_radius_full;
+    border: calc($size * 2) solid $bg;
+  }
+}

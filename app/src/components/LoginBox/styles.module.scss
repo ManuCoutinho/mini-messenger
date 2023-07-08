@@ -1,42 +1,61 @@
-.loginBoxWrapper {
+@import '../../styles/mixins/grid';
+@import '../../styles/base/variables';
+@import '../../styles/mixins/breakpoints';
+
+.login-box {
+  @include flexColumn(center, center);
   height: 100vh;
   width: 100%;
-  background: #17171a url(../../assets/banner-girl.png) no-repeat center top;
-
+  background: $black url(assets/banner-girl.png) no-repeat center top;
   padding: 440px 80px 0;
   text-align: center;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    @include breakpoint(small-only){
+      height: 100%;
+      padding:2rem;
+  
+      background: transparent;
+    }
 
-  strong {
-    font-size: 32px;
-    line-height:36px;
+    &__title {
+      font-size: $xlg;
+      line-height: 2.5rem;
+
+      @include breakpoint(small-only){
+        margin-top: 2.5rem;
+        font-size: $lg;
+        line-height: 2.5rem;
+      }
+    
+    }
+
+    &__link {
+    @include flexRow(center);
+    background: $primary;
+    margin-top: 2rem;
+    padding: 1.5rem 2.5rem;
+    color: $black;
+    font-size: $md;
+    font-weight: $semi_bold;
+    text-transform: uppercase;
+    transition: filter 0.25s ease-in-out;
+    border-radius: $global_radius_sm;
+    gap: 1rem;
+
+      @include breakpoint(small-only){
+        padding: 1rem 2.5rem;
+      }
+
+      &:hover {
+        filter: brightness(0.9);
+        transition: filter 0.25s ease-in-out;
+      }
+
+      &:is(:focus, :active, :focus-within) {
+        outline: 1px solid $secondary;
+      }
+
+    
   }
 }
 
-.signInWithGithub {
-  background: #ffcd1e;
-  margin-top: 32px;
-  padding: 0 40px;
-  height: 56px;
-  color: #09090a;
-  font-size:14px;
-  font-weight:bold;
-  text-transform: uppercase;
-  text-decoration: none;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  svg {
-    margin-right: 16px;
-  }
-
-  &:hover {
-    filter: brightness(0.9);
-  }
-}

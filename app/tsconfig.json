@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "ES2021",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": false,
@@ -23,11 +23,11 @@
   },
   "include": [
     "src",
-    ".jest/jest.setup.ts",
+    ".config/jest.setup.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.spec.tsx"
-  ],
+, "config/jest/jest.setup.js", "jest.config.js"  ],
   "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

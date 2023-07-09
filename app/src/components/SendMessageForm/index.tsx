@@ -19,7 +19,12 @@ export function SendMessageForm(): React.JSX.Element {
 
   return (
     <div className={styles.sm__wrapper}>
-      <button onClick={signOut} className={styles['sm__button--singout']}>
+      <button
+        onClick={signOut}
+        className={styles['sm__button--singout']}
+        name='logout'
+        aria-label='logout'
+      >
         <VscSignOut size='32' />
       </button>
 

@@ -1,5 +1,5 @@
 <div align="center" id="top"> 
-  <img src="./app/public/assets/preview.png" alt="Mini Messenger preview" />
+  <img src="./app/public/assets/preview.png" alt="Mini Messenger preview" width='600'/>
 </div>
   &#xa0;
 

@@ -2,7 +2,7 @@
 
 ## :dart: Sobre ##
 
-A aplicação consite numa landing page no formato de SPA, que contém um mini chat para que os usuários possam comentar sobre o evento. Impotante ressaltar que para acessar o chat é necessária a autenticação do usuário por meio de autenticação social.
+A aplicação consite numa landing page no formato de SPA, que contém um mini chat para que os usuários possam comentar sobre o evento. Importante ressaltar que para acessar o chat é necessária a autenticação do usuário por meio de autenticação social (_Github_).
 
 ## :minidisc: Requerimentos ##
 

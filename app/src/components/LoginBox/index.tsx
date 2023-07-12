@@ -12,6 +12,7 @@ export function LoginBox(): React.JSX.Element {
         Entre e compartilhe sua mensagem
       </h2>
       <a
+        role='link'
         className={styles['login-box__link']}
         href={signInUrl}
         tabIndex={0}

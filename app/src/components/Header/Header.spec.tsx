@@ -1,4 +1,6 @@
+import '@testing-library/jest-dom'
 import { screen, render } from '@testing-library/react'
+import { describe, expect, it } from 'vitest'
 import { Header } from '.'
 describe('<Header/>', () => {
   it('should render the header correctly', () => {

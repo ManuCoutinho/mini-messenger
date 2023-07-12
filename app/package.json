@@ -22,8 +22,9 @@
     "preview": "vite preview",
     "lint": "eslint --ext .ts,.tsx src",
     "lint:css": "stylelint \"src/**/*.scss\"",
-    "test": "vitest"
-  
+    "test": "vitest run",
+    "test:watch": "vitest --logHeapUsage",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "axios": "^0.24.0",
@@ -44,6 +45,7 @@
     "@typescript-eslint/eslint-plugin": "^5.41.0",
     "@typescript-eslint/parser": "^5.41.0",
     "@vitejs/plugin-react": "^4.0.0",
+    "@vitest/coverage-v8": "^0.33.0",
     "eslint": "^8.32.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -53,6 +55,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jsdom": "^22.1.0",
     "lint-staged": "^13.1.0",
+    "msw": "^1.2.2",
     "prettier": "^2.8.3",
     "sass": "^1.63.6",
     "ts-node": "^10.9.1",

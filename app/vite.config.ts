@@ -13,7 +13,8 @@ export default defineConfig({
   },
   test: {
     globals: true,
-    environment: 'jsdom'
+    environment: 'jsdom',
+    setupFiles: ['./config/test.setup.ts']
   },
   //needed for the Docker container port mapping to work
   server: {
